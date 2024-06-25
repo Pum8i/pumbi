@@ -1,17 +1,19 @@
 import { Box, Container, CssBaseline, Paper } from "@mui/material";
 import { resumeData } from "src/assets/data";
-import Awards from "./components/Awards";
-import Education from "./components/Education";
-import Header from "./components/Header";
-import { ProfessionalExperience } from "./components/ProfessionalExperience";
-import { ProfessionalSkills } from "./components/ProfessionalSkills";
-import { Summary } from "./components/Summary";
-import { TechnicalSkills } from "./components/TechnicalSkills";
+import Awards from "./components/sections/Awards";
+import Education from "./components/sections/Education";
+import Header from "./components/sections/Header";
+import { ProfessionalExperience } from "./components/sections/ProfessionalExperience";
+import { ProfessionalSkills } from "./components/sections/ProfessionalSkills";
+import { Summary } from "./components/sections/Summary";
+import { TechnicalSkills } from "./components/sections/TechnicalSkills";
+import SideOptions from "./components/widgets/SideOptions";
 
 function App() {
   return (
     <>
       <CssBaseline />
+      <SideOptions />
       <Box sx={{ backgroundColor: "ghostwhite" }}>
         <Container maxWidth="md" sx={{ p: 2 }}>
           <Paper sx={{ p: 8 }}>

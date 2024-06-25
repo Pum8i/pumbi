@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import Section from "./Section";
+import Section from "../widgets/Section";
 
 interface IData {
   professionalSkills: string[];

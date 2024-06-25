@@ -30,6 +30,7 @@ export function Experience({ experience }: { experience: IData }) {
         {duties.map((duty) => {
           return (
             <ListItemText
+              key={duty}
               sx={{
                 display: "list-item",
                 textAlign: "justify",

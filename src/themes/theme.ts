@@ -2,50 +2,74 @@ import { createTheme } from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
   interface Palette {
-    headingBlue: Palette["primary"];
+    accents: Palette["primary"];
   }
 
   interface PaletteOptions {
-    headingBlue?: PaletteOptions["primary"];
+    accents?: PaletteOptions["primary"];
+  }
+  interface PaletteColor {
+    blue: string;
+    brown: string;
+    burgundy: string;
+    green: string;
+    orange: string;
+    purple: string;
+  }
+
+  interface SimplePaletteColorOptions {
+    blue: string;
+    brown: string;
+    burgundy: string;
+    green: string;
+    orange: string;
+    purple: string;
   }
 }
 
-let theme = createTheme({
-  palette: {
-    headingBlue: {
-      main: "#1f3864",
+export const defaultTheme = (accent: string | undefined) => {
+  let theme = createTheme({
+    palette: {
+      accents: {
+        main: "primary",
+        blue: "#1f3864",
+        brown: "#954535",
+        burgundy: "#800020",
+        green: "#228B22",
+        orange: "#CC5500",
+        purple: "#8E4585",
+      },
     },
-  },
-});
+  });
 
-theme = createTheme(theme, {
-  typography: {
-    h1: {
-      fontSize: "2rem",
-      fontWeight: "bold",
-      color: theme.palette.headingBlue.main,
+  theme = createTheme(theme, {
+    typography: {
+      h1: {
+        fontSize: "2rem",
+        fontWeight: "bold",
+        color: accent ?? theme.palette.accents.blue,
+      },
+      h2: {
+        fontSize: "1.5rem",
+        fontWeight: "bold",
+        fontStyle: "italic",
+        color: accent ?? theme.palette.accents.blue,
+      },
+      h3: {
+        fontSize: "1.25rem",
+        fontWeight: "bold",
+        color: accent ?? theme.palette.accents.blue,
+      },
+      h4: {
+        fontSize: "1rem",
+        fontWeight: "bold",
+      },
+      h5: {
+        fontSize: "1rem",
+        fontWeight: "bold",
+        fontStyle: "italic",
+      },
     },
-    h2: {
-      fontSize: "1.5rem",
-      fontWeight: "bold",
-      fontStyle: "italic",
-      color: theme.palette.headingBlue.main,
-    },
-    h3: {
-      fontSize: "1.25rem",
-      fontWeight: "bold",
-      color: theme.palette.headingBlue.main,
-    },
-    h4: {
-      fontSize: "1rem",
-      fontWeight: "bold",
-    },
-    h5: {
-      fontSize: "1rem",
-      fontWeight: "bold",
-      fontStyle: "italic",
-    },
-  },
-});
-
-export { theme };
+  });
+  return theme;
+};

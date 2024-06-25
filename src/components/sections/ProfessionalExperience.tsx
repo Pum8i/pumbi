@@ -1,5 +1,5 @@
 import { Experience } from "./Experience";
-import Section from "./Section";
+import Section from "../widgets/Section";
 
 interface IData {
   professionalExperience: {
@@ -14,7 +14,7 @@ export function ProfessionalExperience({ resumeData }: { resumeData: IData }) {
   return (
     <Section sectionTitle="Professional Experience">
       {resumeData.professionalExperience.map((exp) => {
-        return <Experience experience={exp} />;
+        return <Experience experience={exp} key={exp.company} />;
       })}
     </Section>
   );
