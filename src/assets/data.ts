@@ -13,28 +13,35 @@ export const resumeData = {
     {
       grouping: "lang",
       label: "Language",
-      values: ["Java", "NodeJS", "Kotlin", "JavaScript", "Python", "C#", "SQL"],
+      values: [
+        "Java",
+        "JavaScript",
+        "Kotlin",
+        "Python",
+        "C#",
+        "SQL",
+        "GraphQL",
+      ],
     },
     {
       grouping: "framework",
       label: "Frameworks",
-      values: ["React", "Android"],
+      values: ["React", "Android", "Express", "Springboot"],
+    },
+    {
+      grouping: "runtime",
+      label: "Runtime Environments",
+      values: ["NodeJS"],
     },
     {
       grouping: "testing",
       label: "Testing",
-      values: [
-        "Test Automation",
-        "Playwright",
-        "Selenium",
-        "pytest",
-        "pyCharm",
-      ],
+      values: ["Test Automation", "Playwright", "Selenium", "pytest"],
     },
     {
       grouping: "db",
       label: "Data Bases",
-      values: ["GraphQL", "MySQL", "Postgres", "Oracle", "MongoDb", "GraphQL"],
+      values: ["MySQL", "Postgres", "Oracle", "MongoDb", "GraphQL"],
     },
     {
       grouping: "cloud",
@@ -59,7 +66,14 @@ export const resumeData = {
     {
       grouping: "ide",
       label: "IDE's",
-      values: ["VS Code", "IntelliJ", "Eclipse", "Visual Studio"],
+      values: [
+        "VS Code",
+        "IntelliJ",
+        "Eclipse",
+        "Visual Studio",
+        "Android Studio",
+        "pyCharm",
+      ],
     },
     {
       grouping: "other",
@@ -72,7 +86,6 @@ export const resumeData = {
         "Splunk",
         "Sonar Cloud",
         "Redux",
-        "Express",
         "Microservices",
         "RESTful APIs",
       ],
