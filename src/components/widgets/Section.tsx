@@ -4,12 +4,13 @@ import React from "react";
 interface IData {
   sectionTitle: string;
   children: React.ReactNode;
+  pb?: number;
   pt?: number;
 }
 
-export default function Section({ sectionTitle, children, pt }: IData) {
+export default function Section({ sectionTitle, children, pb, pt }: IData) {
   return (
-    <Box pt={pt}>
+    <Box pb={pb} pt={pt}>
       <Typography variant="h3" textAlign={"left"}>
         {sectionTitle}
       </Typography>

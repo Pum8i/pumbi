@@ -7,6 +7,7 @@ import { useTheme } from "@mui/material/styles";
 import { useDeviceSize } from "src/hooks/DeviceSizeHooks";
 import * as React from "react";
 import SideOptionsAccentColors from "./SideOptionsAccentColors";
+import SideOptionsTechSkillsGrouping from "./SideOptionsTechSkillsGrouping";
 
 interface IData {
   sideOptions: {
@@ -91,6 +92,7 @@ export default function SideOptions({ resumeData }: { resumeData: IData }) {
           </Stack>
 
           <SideOptionsAccentColors isSmallScreen={isSmallScreen} />
+          <SideOptionsTechSkillsGrouping isSmallScreen={isSmallScreen} />
         </Box>
       </Drawer>
     </div>

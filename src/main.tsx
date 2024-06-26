@@ -12,6 +12,7 @@ import { defaultTheme } from "src/themes/theme";
 import App from "./App.tsx";
 import { AccentContextProvider } from "./contexts/AccentContext.tsx";
 import { useAccentContext } from "./hooks/ContextHooks.ts";
+import { TechSkillsContextProvider } from "./contexts/TechSkillsContext.tsx";
 
 // import "@fontsource-variable/roboto-mono";
 // Supports weights 100-900 in a single small file.
@@ -31,7 +32,9 @@ export const Theme = () => {
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <AccentContextProvider>
-      <Theme />
+      <TechSkillsContextProvider>
+        <Theme />
+      </TechSkillsContextProvider>
     </AccentContextProvider>
   </React.StrictMode>
 );

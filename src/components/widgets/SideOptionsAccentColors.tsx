@@ -8,21 +8,29 @@ import {
 import { useTheme } from "@mui/material/styles";
 import * as React from "react";
 import { useAccentContext } from "src/hooks/ContextHooks";
+import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
 
 const Label = ({
   accentColor,
   label,
+  isSmallScreen,
 }: {
   accentColor: string;
   label: string;
+  isSmallScreen: boolean;
 }) => {
   return (
     <FormControlLabel
       value={accentColor}
-      control={<Radio sx={{ color: accentColor }} />}
+      control={
+        <Radio
+          sx={{ color: accentColor }}
+          checkedIcon={<RadioButtonCheckedIcon sx={{ color: accentColor }} />}
+        />
+      }
       componentsProps={{ typography: { color: accentColor } }}
       label={label}
-      labelPlacement="bottom"
+      labelPlacement={isSmallScreen ? "end" : "bottom"}
     />
   );
 };
@@ -55,12 +63,32 @@ export default function SideOptionsAccentColors({
         onChange={handleChange}
         row={isSmallScreen ? false : true}
       >
-        <Label accentColor={blue} label="Blue" />
-        <Label accentColor={brown} label="Brown" />
-        <Label accentColor={burgundy} label="Burgundy" />
-        <Label accentColor={green} label="Green" />
-        <Label accentColor={orange} label="Orange" />
-        <Label accentColor={purple} label="Purple" />
+        <Label accentColor={blue} label="Blue" isSmallScreen={isSmallScreen} />
+        <Label
+          accentColor={brown}
+          label="Brown"
+          isSmallScreen={isSmallScreen}
+        />
+        <Label
+          accentColor={burgundy}
+          label="Burgundy"
+          isSmallScreen={isSmallScreen}
+        />
+        <Label
+          accentColor={green}
+          label="Green"
+          isSmallScreen={isSmallScreen}
+        />
+        <Label
+          accentColor={orange}
+          label="Orange"
+          isSmallScreen={isSmallScreen}
+        />
+        <Label
+          accentColor={purple}
+          label="Purple"
+          isSmallScreen={isSmallScreen}
+        />
       </RadioGroup>
     </FormControl>
   );
