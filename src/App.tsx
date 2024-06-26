@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <SideOptions />
+      <SideOptions resumeData={resumeData} />
       <Box sx={{ backgroundColor: "ghostwhite" }}>
         <Container maxWidth="md" sx={{ p: 2 }}>
           <Paper sx={{ p: 8 }}>

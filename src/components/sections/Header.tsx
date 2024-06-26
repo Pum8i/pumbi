@@ -1,5 +1,6 @@
 import { Link, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
+import { useDeviceSize } from "src/hooks/DeviceSizeHooks";
 import CornerIcon from "src/assets/CornerIcon";
 
 interface IData {
@@ -12,6 +13,7 @@ interface IData {
 }
 
 function Header({ resumeData }: { resumeData: IData }) {
+  const { isSmallScreen } = useDeviceSize();
   const { name, title, email, phone, location, linkedIn } = resumeData;
   return (
     <Grid container direction="row" justifyContent="space-between">
@@ -35,9 +37,11 @@ function Header({ resumeData }: { resumeData: IData }) {
           </Link>
         </Typography>
       </Grid>
-      <Grid>
-        <CornerIcon />
-      </Grid>
+      {!isSmallScreen && (
+        <Grid>
+          <CornerIcon />
+        </Grid>
+      )}
     </Grid>
   );
 }

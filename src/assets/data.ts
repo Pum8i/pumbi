@@ -139,4 +139,8 @@ export const resumeData = {
     "P2 Energy Solutions Employee Recognition",
   ],
   links: [{ url: "https://github.com/Pum8i", label: "GitHub" }],
+  sideOptions: {
+    description:
+      "Just a simple implementation of my resume to help demostrate some of my React skills.",
+  },
 };

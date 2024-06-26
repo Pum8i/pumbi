@@ -1,53 +1,28 @@
 import { Global } from "@emotion/react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import {
-  Box,
-  Drawer,
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  IconButton,
-  Radio,
-  RadioGroup,
-} from "@mui/material";
+import InfoIcon from "@mui/icons-material/Info";
+import { Box, Drawer, IconButton, Stack, Typography } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { useTheme } from "@mui/material/styles";
-import { useAccentContext } from "src/hooks/ContextHooks";
+import { useDeviceSize } from "src/hooks/DeviceSizeHooks";
 import * as React from "react";
+import SideOptionsAccentColors from "./SideOptionsAccentColors";
+
+interface IData {
+  sideOptions: {
+    description: string;
+  };
+}
 
 const drawerBleeding = 48;
 
-const Label = ({
-  accentColor,
-  label,
-}: {
-  accentColor: string;
-  label: string;
-}) => {
-  return (
-    <FormControlLabel
-      value={accentColor}
-      control={<Radio sx={{ color: accentColor }} />}
-      componentsProps={{ typography: { color: accentColor } }}
-      label={label}
-    />
-  );
-};
-
-export default function SideOptions() {
+export default function SideOptions({ resumeData }: { resumeData: IData }) {
   const theme = useTheme();
-  const { accentColor, setAccentColor } = useAccentContext();
+  const { isSmallScreen } = useDeviceSize();
   const [open, setOpen] = React.useState(false);
-
-  const { blue, brown, burgundy, green, orange, purple } =
-    theme.palette.accents;
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
-  };
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAccentColor((event.target as HTMLInputElement).value);
   };
 
   return (
@@ -56,7 +31,9 @@ export default function SideOptions() {
       <Global
         styles={{
           ".MuiDrawer-root > .MuiPaper-root": {
-            width: `calc(50% - ${drawerBleeding}px)`,
+            maxWidth: `calc(${
+              isSmallScreen ? "75%" : "50%"
+            } - ${drawerBleeding}px)`,
             overflow: "visible",
           },
         }}
@@ -99,31 +76,20 @@ export default function SideOptions() {
         <Box
           sx={{
             px: 2,
-            pb: 2,
+            py: 2,
             height: "100%",
             overflow: "auto",
             backgroundColor: "lightgray",
           }}
         >
-          <FormControl>
-            <FormLabel id="demo-radio-buttons-group-label">
-              Accent Color
-            </FormLabel>
-            <RadioGroup
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue={blue}
-              name="radio-buttons-group"
-              value={accentColor}
-              onChange={handleChange}
-            >
-              <Label accentColor={blue} label="Blue" />
-              <Label accentColor={brown} label="Brown" />
-              <Label accentColor={burgundy} label="Burgundy" />
-              <Label accentColor={green} label="Green" />
-              <Label accentColor={orange} label="Orange" />
-              <Label accentColor={purple} label="Purple" />
-            </RadioGroup>
-          </FormControl>
+          <Stack direction="row" alignItems="center" spacing={1} p={1}>
+            <InfoIcon />
+            <Typography variant="body1">
+              {resumeData.sideOptions.description}
+            </Typography>
+          </Stack>
+
+          <SideOptionsAccentColors isSmallScreen={isSmallScreen} />
         </Box>
       </Drawer>
     </div>
