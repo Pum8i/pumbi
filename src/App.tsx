@@ -3,6 +3,7 @@ import { resumeData } from "src/assets/data";
 import Awards from "./components/sections/Awards";
 import Education from "./components/sections/Education";
 import Header from "./components/sections/Header";
+import Links from "./components/sections/Links";
 import { ProfessionalExperience } from "./components/sections/ProfessionalExperience";
 import { ProfessionalSkills } from "./components/sections/ProfessionalSkills";
 import { Summary } from "./components/sections/Summary";
@@ -24,6 +25,7 @@ function App() {
             <ProfessionalExperience resumeData={resumeData} />
             <Education resumeData={resumeData} />
             <Awards resumeData={resumeData} />
+            <Links resumeData={resumeData} />
           </Paper>
         </Container>
       </Box>

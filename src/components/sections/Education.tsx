@@ -10,7 +10,7 @@ interface IData {
 
 export default function Education({ resumeData }: { resumeData: IData }) {
   return (
-    <Section sectionTitle="Education and Certification" pb={1}>
+    <Section sectionTitle="Education and Certification">
       {resumeData.education.map((e) => {
         return (
           <Stack direction="row" key={e.school}>

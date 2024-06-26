@@ -1,4 +1,4 @@
-import { List, ListItemText, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 
 interface IData {
@@ -21,26 +21,20 @@ export function Experience({ experience }: { experience: IData }) {
       <Typography variant="h5" align="left">
         {title}
       </Typography>
-      <List
-        sx={{
-          pl: 3,
-          listStyleType: "disc",
-        }}
-      >
+      <ul>
         {duties.map((duty) => {
           return (
-            <ListItemText
+            <li
               key={duty}
-              sx={{
-                display: "list-item",
+              style={{
                 textAlign: "justify",
               }}
             >
               {duty}
-            </ListItemText>
+            </li>
           );
         })}
-      </List>
+      </ul>
     </>
   );
 }

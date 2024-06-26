@@ -23,7 +23,7 @@ function Header({ resumeData }: { resumeData: IData }) {
           {title}
         </Typography>
         <Typography variant="body1" align="left">
-          <Link href={email} target="_blank" rel="noreferrer">
+          <Link href={`mailto:${email}`} target="_blank" rel="noreferrer">
             {email}
           </Link>
           {" | " + phone + " | " + location}

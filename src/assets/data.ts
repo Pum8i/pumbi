@@ -138,4 +138,5 @@ export const resumeData = {
     "ATB Quarterly Award for excellence",
     "P2 Energy Solutions Employee Recognition",
   ],
+  links: [{ url: "https://github.com/Pum8i", label: "GitHub" }],
 };

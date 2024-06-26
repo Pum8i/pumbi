@@ -7,7 +7,7 @@ interface IData {
 
 export default function Awards({ resumeData }: { resumeData: IData }) {
   return (
-    <Section sectionTitle="Awards">
+    <Section sectionTitle="Awards" pt={1}>
       {resumeData.awards.map((award) => {
         return (
           <Typography variant="body1" align="left" key={award}>
