@@ -64,6 +64,7 @@ export default function SideOptions({ resumeData }: { resumeData: IData }) {
             sx={{
               px: 1,
               my: 2,
+              mr: 0.5,
               transform: !open ? "rotate(0deg)" : "rotate(180deg)",
               transition: theme.transitions.create("transform", {
                 duration: 500,

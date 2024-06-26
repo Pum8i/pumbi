@@ -5,17 +5,17 @@ interface IData {
 }
 
 type IAccentContext = {
-  accentColor: string | undefined;
-  setAccentColor: React.Dispatch<React.SetStateAction<string | undefined>>;
+  accentColor: string;
+  setAccentColor: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export const AccentContext = createContext<IAccentContext>({
-  accentColor: undefined,
+  accentColor: "#1f3864",
   setAccentColor: () => null,
 });
 
 export const AccentContextProvider = ({ children }: IData) => {
-  const [accentColor, setAccentColor] = useState<string | undefined>();
+  const [accentColor, setAccentColor] = useState<string>("#1f3864");
 
   return (
     <AccentContext.Provider value={{ accentColor, setAccentColor }}>

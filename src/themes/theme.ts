@@ -42,23 +42,25 @@ export const defaultTheme = (accent: string | undefined) => {
     },
   });
 
+  const color = accent ?? theme.palette.accents.blue;
+
   theme = createTheme(theme, {
     typography: {
       h1: {
         fontSize: "2rem",
         fontWeight: "bold",
-        color: accent ?? theme.palette.accents.blue,
+        color,
       },
       h2: {
         fontSize: "1.5rem",
         fontWeight: "bold",
         fontStyle: "italic",
-        color: accent ?? theme.palette.accents.blue,
+        color,
       },
       h3: {
         fontSize: "1.25rem",
         fontWeight: "bold",
-        color: accent ?? theme.palette.accents.blue,
+        color,
       },
       h4: {
         fontSize: "1rem",
