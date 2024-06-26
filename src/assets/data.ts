@@ -16,6 +16,7 @@ export const resumeData = {
       values: [
         "Java",
         "JavaScript",
+        "TypeScript",
         "Kotlin",
         "Python",
         "C#",
@@ -72,7 +73,7 @@ export const resumeData = {
         "Eclipse",
         "Visual Studio",
         "Android Studio",
-        "pyCharm",
+        "PyCharm",
       ],
     },
     {
