@@ -1,7 +1,13 @@
 import { Global } from "@emotion/react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import InfoIcon from "@mui/icons-material/Info";
-import { Box, Drawer, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Drawer,
+  IconButton,
+  Stack,
+  Typography,
+} from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { useTheme } from "@mui/material/styles";
 import { useDeviceSize } from "src/hooks/DeviceSizeHooks";
@@ -78,21 +84,27 @@ export default function SideOptions({ resumeData }: { resumeData: IData }) {
         <Box
           sx={{
             px: 2,
-            py: 2,
+            py: 4,
             height: "100%",
             overflow: "auto",
             backgroundColor: "lightgray",
           }}
         >
-          <Stack direction="row" alignItems="center" spacing={1} p={1}>
-            <InfoIcon />
+          <Stack spacing={3} p={1}>
             <Typography variant="body1">
               {resumeData.sideOptions.description}
             </Typography>
-          </Stack>
+            <Divider />
 
-          <SideOptionsAccentColors isSmallScreen={isSmallScreen} />
-          <SideOptionsTechSkillsGrouping isSmallScreen={isSmallScreen} />
+            <Typography variant="h1" paragraph align="center">
+              Formatting Options
+            </Typography>
+
+            <SideOptionsAccentColors isSmallScreen={isSmallScreen} />
+            <Divider />
+
+            <SideOptionsTechSkillsGrouping isSmallScreen={isSmallScreen} />
+          </Stack>
         </Box>
       </Drawer>
     </div>

@@ -1,31 +1,12 @@
 import {
   FormControl,
-  FormControlLabel,
   FormLabel,
-  Radio,
-  RadioGroup,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
 } from "@mui/material";
 import * as React from "react";
 import { useTechSkillsContext } from "src/hooks/ContextHooks";
-
-const Label = ({
-  isSmallScreen,
-  label,
-  skillGrouping,
-}: {
-  isSmallScreen: boolean;
-  label: string;
-  skillGrouping: string;
-}) => {
-  return (
-    <FormControlLabel
-      value={skillGrouping}
-      control={<Radio />}
-      label={label}
-      labelPlacement={isSmallScreen ? "end" : "bottom"}
-    />
-  );
-};
 
 export default function SideOptionsTechSkillsGrouping({
   isSmallScreen,
@@ -34,33 +15,35 @@ export default function SideOptionsTechSkillsGrouping({
 }) {
   const { skillGrouping, setSkillGrouping } = useTechSkillsContext();
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSkillGrouping((event.target as HTMLInputElement).value);
+  const handleChange = (
+    _event: React.MouseEvent<HTMLElement>,
+    newAcc: string
+  ) => {
+    setSkillGrouping(newAcc);
   };
 
   return (
     <FormControl fullWidth margin="normal" sx={{ alignItems: "center" }}>
-      <FormLabel id="accent-color-radio-buttons-group-label">
-        Technical Skills Grouping
+      <FormLabel id="tech-skills-toggle-group-label">
+        <Typography align="center" fontWeight="bold">
+          Technical Skills Grouping
+        </Typography>
+        <Typography variant="body1" paragraph align="justify">
+          List Technical skills as one big list or group them be technology
+        </Typography>
       </FormLabel>
-      <RadioGroup
-        aria-labelledby="accent-color-radio-buttons-group-label"
-        name="accent-color-radio-buttons-group"
+
+      <ToggleButtonGroup
+        size="small"
+        aria-label="Tech skills button group"
+        exclusive
         value={skillGrouping}
         onChange={handleChange}
-        row={isSmallScreen ? false : true}
+        orientation={isSmallScreen ? "vertical" : "horizontal"}
       >
-        <Label
-          skillGrouping={"none"}
-          label="None"
-          isSmallScreen={isSmallScreen}
-        />
-        <Label
-          skillGrouping={"tech"}
-          label="Technology"
-          isSmallScreen={isSmallScreen}
-        />
-      </RadioGroup>
+        <ToggleButton value={"none"}>{"None"}</ToggleButton>
+        <ToggleButton value={"tech"}>{"Technology"}</ToggleButton>
+      </ToggleButtonGroup>
     </FormControl>
   );
 }

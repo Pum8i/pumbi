@@ -1,39 +1,15 @@
 import {
+  Box,
   FormControl,
-  FormControlLabel,
   FormLabel,
-  Radio,
-  RadioGroup,
+  Stack,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import * as React from "react";
 import { useAccentContext } from "src/hooks/ContextHooks";
-import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
-
-const Label = ({
-  accentColor,
-  label,
-  isSmallScreen,
-}: {
-  accentColor: string;
-  label: string;
-  isSmallScreen: boolean;
-}) => {
-  return (
-    <FormControlLabel
-      value={accentColor}
-      control={
-        <Radio
-          sx={{ color: accentColor }}
-          checkedIcon={<RadioButtonCheckedIcon sx={{ color: accentColor }} />}
-        />
-      }
-      componentsProps={{ typography: { color: accentColor } }}
-      label={label}
-      labelPlacement={isSmallScreen ? "end" : "bottom"}
-    />
-  );
-};
 
 export default function SideOptionsAccentColors({
   isSmallScreen,
@@ -46,50 +22,72 @@ export default function SideOptionsAccentColors({
   const { blue, brown, burgundy, green, orange, purple } =
     theme.palette.accents;
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAccentColor((event.target as HTMLInputElement).value);
+  const handleAlignment = (
+    _event: React.MouseEvent<HTMLElement>,
+    newAcc: string
+  ) => {
+    setAccentColor(newAcc);
+  };
+
+  const Togs = ({
+    accentColor,
+    label,
+  }: {
+    accentColor: string;
+    label: string;
+  }) => {
+    return (
+      <ToggleButton value={accentColor}>
+        <Stack
+          direction="row"
+          justifyContent={"flex-start"}
+          alignItems="center"
+          sx={{ width: "100%" }}
+        >
+          <Box
+            sx={{
+              height: 16,
+              width: 16,
+              pr: 2,
+              mr: 1,
+              borderRadius: 0.5,
+              border: 1,
+              borderColor: "black",
+              background: accentColor,
+            }}
+          ></Box>
+          {label}
+        </Stack>
+      </ToggleButton>
+    );
   };
 
   return (
     <FormControl fullWidth margin="normal" sx={{ alignItems: "center" }}>
-      <FormLabel id="accent-color-radio-buttons-group-label">
-        Accent Color
+      <FormLabel id="accent-color-toggle-group-label">
+        <Typography align="center" fontWeight="bold">
+          Accent Color
+        </Typography>
+        <Typography variant="body1" paragraph>
+          Pick your favourite accent color
+        </Typography>
       </FormLabel>
-      <RadioGroup
-        aria-labelledby="accent-color-radio-buttons-group-label"
-        defaultValue={blue}
-        name="accent-color-radio-buttons-group"
+
+      <ToggleButtonGroup
+        size="small"
+        aria-label="Accent colour toggle group"
+        exclusive
         value={accentColor}
-        onChange={handleChange}
-        row={isSmallScreen ? false : true}
+        onChange={handleAlignment}
+        orientation={isSmallScreen ? "vertical" : "horizontal"}
       >
-        <Label accentColor={blue} label="Blue" isSmallScreen={isSmallScreen} />
-        <Label
-          accentColor={brown}
-          label="Brown"
-          isSmallScreen={isSmallScreen}
-        />
-        <Label
-          accentColor={burgundy}
-          label="Burgundy"
-          isSmallScreen={isSmallScreen}
-        />
-        <Label
-          accentColor={green}
-          label="Green"
-          isSmallScreen={isSmallScreen}
-        />
-        <Label
-          accentColor={orange}
-          label="Orange"
-          isSmallScreen={isSmallScreen}
-        />
-        <Label
-          accentColor={purple}
-          label="Purple"
-          isSmallScreen={isSmallScreen}
-        />
-      </RadioGroup>
+        <Togs accentColor={blue} label="Blue" />
+        <Togs accentColor={brown} label="Brown" />
+        <Togs accentColor={burgundy} label="Burgundy" />
+        <Togs accentColor={green} label="Green" />
+        <Togs accentColor={orange} label="Orange" />
+        <Togs accentColor={purple} label="Purple" />
+      </ToggleButtonGroup>
     </FormControl>
   );
 }

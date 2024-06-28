@@ -173,6 +173,6 @@ export const resumeData = {
   links: [{ url: "https://github.com/Pum8i", label: "GitHub" }],
   sideOptions: {
     description:
-      "Just a simple implementation of my resume to help demostrate some of my React skills.",
+      "A simple implementation of my resume to help demostrate some of my React skills.",
   },
 };
