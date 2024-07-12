@@ -23,7 +23,13 @@ There are a couple of options that you can use to change how the resume is displ
 - Accent Color - Change the color of the heading and the decorator.
 - Tech Skills Grouping - Change how the Tech skills are grouped.
 
+# Chuck Norris
+
+Simple example of fetching data from an API.
+
 ## TODOS
 
 - Add specific skills to each experience, maybe?
+- Add font selector.
 - Add some tests.
+- Add About page?

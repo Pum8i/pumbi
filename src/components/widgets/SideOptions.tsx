@@ -13,6 +13,7 @@ import { useTheme } from "@mui/material/styles";
 import * as React from "react";
 import { useAccentContext } from "src/hooks/ContextHooks";
 import { useDeviceSize } from "src/hooks/DeviceSizeHooks";
+import ChuckNorris from "./ChuckNorris";
 import SideOptionsAccentColors from "./SideOptionsAccentColors";
 import SideOptionsTechSkillsGrouping from "./SideOptionsTechSkillsGrouping";
 
@@ -111,6 +112,8 @@ export default function SideOptions({ resumeData }: { resumeData: IData }) {
             <SideOptionsAccentColors isSmallScreen={isSmallScreen} />
             <Divider />
             <SideOptionsTechSkillsGrouping isSmallScreen={isSmallScreen} />
+            <Box sx={{ height: "-webkit-fill-available" }}></Box>
+            <ChuckNorris />
           </Stack>
         </Box>
       </Drawer>

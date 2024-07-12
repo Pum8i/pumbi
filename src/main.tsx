@@ -14,10 +14,6 @@ import { AccentContextProvider } from "./contexts/AccentContext.tsx";
 import { useAccentContext } from "./hooks/ContextHooks.ts";
 import { TechSkillsContextProvider } from "./contexts/TechSkillsContext.tsx";
 
-// import "@fontsource-variable/roboto-mono";
-// Supports weights 100-900 in a single small file.
-// import "@fontsource-variable/roboto-flex/300";
-
 // Inner component - allows us to get the accent color to update the theme colors
 export const Theme = () => {
   const { accentColor } = useAccentContext();
