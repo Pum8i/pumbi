@@ -10,8 +10,9 @@ import {
 } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { useTheme } from "@mui/material/styles";
-import { useDeviceSize } from "src/hooks/DeviceSizeHooks";
 import * as React from "react";
+import { useAccentContext } from "src/hooks/ContextHooks";
+import { useDeviceSize } from "src/hooks/DeviceSizeHooks";
 import SideOptionsAccentColors from "./SideOptionsAccentColors";
 import SideOptionsTechSkillsGrouping from "./SideOptionsTechSkillsGrouping";
 
@@ -25,6 +26,7 @@ const drawerBleeding = 48;
 
 export default function SideOptions({ resumeData }: { resumeData: IData }) {
   const theme = useTheme();
+  const { accentColor } = useAccentContext();
   const { isSmallScreen } = useDeviceSize();
   const [open, setOpen] = React.useState(false);
 
@@ -63,7 +65,6 @@ export default function SideOptions({ resumeData }: { resumeData: IData }) {
             visibility: "visible",
             right: -drawerBleeding,
             left: 0,
-            backgroundColor: "lightgray",
           }}
         >
           <IconButton
@@ -72,10 +73,19 @@ export default function SideOptions({ resumeData }: { resumeData: IData }) {
               px: 1,
               my: 2,
               mr: 0.5,
+              backgroundColor: open ? "white" : "lightgray",
+              WebkitTransition: "all .5s ease",
+              MozTransition: "all .5s ease",
               transform: !open ? "rotate(0deg)" : "rotate(180deg)",
-              transition: theme.transitions.create("transform", {
-                duration: 500,
-              }),
+              transition: theme.transitions.create(
+                ["transform", "all .5s ease"],
+                {
+                  duration: 500,
+                }
+              ),
+              "&:hover": {
+                background: accentColor,
+              },
             }}
           >
             <ChevronRightIcon />
@@ -84,14 +94,13 @@ export default function SideOptions({ resumeData }: { resumeData: IData }) {
         <Box
           sx={{
             px: 2,
-            py: 4,
-            height: "100%",
+            py: 3,
+            height: "-webkit-fill-available",
             overflow: "auto",
-            backgroundColor: "lightgray",
           }}
         >
-          <Stack spacing={3} p={1}>
-            <Typography variant="body1">
+          <Stack spacing={3} p={1} height="-webkit-fill-available">
+            <Typography variant="body1" align="center">
               {resumeData.sideOptions.description}
             </Typography>
             <Divider />
@@ -99,10 +108,8 @@ export default function SideOptions({ resumeData }: { resumeData: IData }) {
             <Typography variant="h1" paragraph align="center">
               Formatting Options
             </Typography>
-
             <SideOptionsAccentColors isSmallScreen={isSmallScreen} />
             <Divider />
-
             <SideOptionsTechSkillsGrouping isSmallScreen={isSmallScreen} />
           </Stack>
         </Box>

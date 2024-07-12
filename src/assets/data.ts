@@ -120,6 +120,19 @@ export const resumeData = {
         "Advocated for and championed 10% time for “Freedom Fridays” - a day for personal learning and professional development.",
       ],
     },
+    {
+      company: "ATB Financial, Calgary",
+      period: "02/2018 – 08/2021",
+      title: "Senior Full Stack Software Developer",
+      duties: [
+        "Key contributor responsible for designing, developing, and testing new features for ATB’s updated Android app.",
+        "Ensured code quality by writing and maintaining automated API tests (pytest) and UI tests (Selenium).",
+        "Led a POC and large-scale implementation of a solution to generate PDFs using Node.js for multiple projects.",
+        "Experience with maintaining CICD pipelines, performing + monitoring multiple microservice deployments, and resolving security vulnerabilities.",
+        "Active participant in agile ceremonies and PI planning.",
+        "Collaborated with many stakeholders including architecture, QA, product, business, and leadership to ensure effective delivery.",
+      ],
+    },
 
     {
       company: "P2 Energy Solutions, Calgary",
@@ -135,20 +148,6 @@ export const resumeData = {
         "Use of Team Foundation Server for milestone planning and management: estimating development timeframes, workload distribution, and feature/bug tracking.",
         "Liaising between BA’s, QAs, and the development team.",
         "Attended career fairs and delivered presentations to graduating students looking to start their careers in software development.",
-      ],
-    },
-
-    {
-      company: "ATB Financial, Calgary",
-      period: "02/2018 – 08/2021",
-      title: "Senior Full Stack Software Developer",
-      duties: [
-        "Key contributor responsible for designing, developing, and testing new features for ATB’s updated Android app.",
-        "Ensured code quality by writing and maintaining automated API tests (pytest) and UI tests (Selenium).",
-        "Led a POC and large-scale implementation of a solution to generate PDFs using Node.js for multiple projects.",
-        "Experience with maintaining CICD pipelines, performing + monitoring multiple microservice deployments, and resolving security vulnerabilities.",
-        "Active participant in agile ceremonies and PI planning.",
-        "Collaborated with many stakeholders including architecture, QA, product, business, and leadership to ensure effective delivery.",
       ],
     },
   ],
@@ -167,7 +166,7 @@ export const resumeData = {
     },
   ],
   awards: [
-    "ATB Quarterly Award for excellence",
+    "ATB Quarterly Award for Excellence",
     "P2 Energy Solutions Employee Recognition",
   ],
   links: [{ url: "https://github.com/Pum8i", label: "GitHub" }],
