@@ -4,13 +4,19 @@ import { useDeviceSize } from "src/hooks/DeviceSizeHooks";
 import Section from "../widgets/Section";
 
 interface IData {
-  techSkills: { grouping: string; label: string; values: string[] }[];
+  techSkills: {
+    grouping: string;
+    label: string;
+    skills: { name: string; companies: string[] }[];
+  }[];
 }
 
 export function TechnicalSkills({ resumeData }: { resumeData: IData }) {
   const { isSmallScreen } = useDeviceSize();
   const { skillGrouping } = useTechSkillsContext();
-  const skills = resumeData.techSkills.flatMap((skill) => skill.values);
+  const skills = resumeData.techSkills.flatMap((s) =>
+    s.skills.map((s) => s.name)
+  );
   const isSkillGroupingNone = skillGrouping === "none";
 
   return (
@@ -20,21 +26,21 @@ export function TechnicalSkills({ resumeData }: { resumeData: IData }) {
           {skills.join(" | ")}
         </Typography>
       ) : (
-        resumeData.techSkills.map((skills) => {
+        resumeData.techSkills.map((ts) => {
           return (
             <Stack
               direction={{ sm: "column", md: "row" }}
               spacing={{ md: 2 }}
               alignItems={isSmallScreen ? "flex-start" : "center"}
               pb={1}
-              key={skills.grouping}
+              key={ts.grouping}
             >
               <Typography
                 variant="body1"
                 fontWeight="bold"
-              >{`${skills.label}:`}</Typography>
+              >{`${ts.label}:`}</Typography>
               <Typography variant="body1">
-                {skills.values.join(" | ")}
+                {ts.skills.map((s) => s.name).join(" | ")}
               </Typography>
             </Stack>
           );

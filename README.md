@@ -29,7 +29,8 @@ Simple example of fetching data from an API.
 
 ## TODOS
 
-- Add specific skills to each experience, maybe?
+- ~~Add specific skills to each experience, maybe?~~
+  - Store skillsByCompany data rather than calculating when we hit Show button.
 - Add font selector.
 - Add some tests.
 - Add About page?

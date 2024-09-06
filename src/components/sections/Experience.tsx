@@ -1,5 +1,6 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
+import { useAccentContext } from "src/hooks/ContextHooks";
 
 interface IData {
   company: string;
@@ -8,7 +9,14 @@ interface IData {
   duties: string[];
 }
 
-export function Experience({ experience }: { experience: IData }) {
+export function Experience({
+  experience,
+  techSkills,
+}: {
+  experience: IData;
+  techSkills: string[];
+}) {
+  const { accentColor } = useAccentContext();
   const { company, period, title, duties } = experience;
   return (
     <>
@@ -35,6 +43,22 @@ export function Experience({ experience }: { experience: IData }) {
           );
         })}
       </ul>
+      {techSkills?.length > 0 && (
+        <>
+          <Typography
+            variant="body1"
+            align="justify"
+            pb={2}
+            px={2}
+            component="div"
+          >
+            <Box fontWeight="bold" color={accentColor} display="inline" pr={1}>
+              Technology Used:
+            </Box>
+            {techSkills.join(" | ")}
+          </Typography>
+        </>
+      )}
     </>
   );
 }
