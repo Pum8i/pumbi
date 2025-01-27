@@ -6,9 +6,7 @@ export const resumeData = {
   location: "Courtenay, BC",
   linkedIn: "https://www.linkedin.com/in/andy-pumbien",
   summary:
-    "Collaborative, proactive, and a seasoned Full-Stack Software Developer, I bring more than 13 years of experience in designing, building, and maintaining world-class applications tailored to client needs.",
-  summary2:
-    "I am recognized for my robust problem-solving skills, adaptability, and unwavering commitment to delivering the code of the highest standard.",
+    "Full-Stack  Software  Developer  with  over  13  years  of  experience  in  designing, building,  and  maintaining  applications  tailored  to  client  needs.  Recognized  for robust  problem-solving  skills  and  adaptability,  with  a  commitment  to  delivering high-standard  code.  Experienced  in  test  automation,  agile  methodologies,  and mentoring team members.",
   techSkills: [
     {
       grouping: "lang",
@@ -147,8 +145,7 @@ export const resumeData = {
       duties: [
         "Designed, implemented, and tested new features for Transact food ordering applications (dashboard and web ordering app), including frontend (React) and backend (Java) development.",
         "Advocated for implementing test pyramid methodology and led efforts to implement E2E test automation utilizing MS Playwright, resulting in migration of +45% of test cases from manual to automated tests.",
-        "Mentored new and existing team members on Transacts best practices for both React/Java applications.",
-        "Actively participated in agile/scrum ceremonies and helped challenge the status quo.",
+        "Mentored  new  and  existing  team  members  and  led  agile  ceremonies  to  enhance team productivity.",
         "Developed a SaaS admin dashboard in React that is used to manage 500K mobile app users and 15m annual transactions.",
         "Developed a web React version of the mobile ordering application by reviewing the Android app to replicate the functionality.",
         "Developed and integrated Amazon - Just Walk Out technology, encompassing frontend (React), backend (Java), and AWS components.",
@@ -184,7 +181,7 @@ export const resumeData = {
         "Created detailed technical specification documents to aid in knowledge transfer and support.",
         "Team Lead position attained within the first year at P2 (during the time on Optix).",
         "Training/mentoring new team members on the use of the differing technologies used on different products.",
-        "Liaising between BA’s, QAs, and the development team.",
+        "Facilitated communication between cross-functional teams.",
         "Attended career fairs and delivered presentations to graduating students looking to start their careers in software development.",
       ],
     },
