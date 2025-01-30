@@ -31,16 +31,7 @@ export function Experience({
       </Typography>
       <ul>
         {duties.map((duty) => {
-          return (
-            <li
-              key={duty}
-              style={{
-                textAlign: "justify",
-              }}
-            >
-              {duty}
-            </li>
-          );
+          return <li key={duty}>{duty}</li>;
         })}
       </ul>
       {techSkills?.length > 0 && (
