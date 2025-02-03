@@ -50,7 +50,7 @@ export const resumeData = {
     },
     {
       grouping: "db",
-      label: "Data Bases",
+      label: "Databases",
       skills: [
         { name: "MySQL", companies: ["han"] },
         { name: "Postgres", companies: ["atb"] },
