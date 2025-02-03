@@ -30,7 +30,7 @@ export const resumeData = {
         { name: "React", companies: ["atb", "han"] },
         { name: "Android", companies: ["atb"] },
         { name: "Express", companies: ["atb"] },
-        { name: "Springboot", companies: ["atb"] },
+        { name: "Spring Boot", companies: ["atb"] },
       ],
     },
     {
@@ -164,7 +164,7 @@ export const resumeData = {
         "Leveraged Node.js and Express to design, build, and deploy numerous new microservices, creating a robust and scalable API layer.",
         "Ensured code quality by writing and maintaining automated API tests (pytest) and UI tests (Selenium).",
         "Led a POC and large-scale implementation of a solution to generate PDFs using Node.js for multiple projects.",
-        "Experience with maintaining CICD pipelines, performing + monitoring multiple microservice deployments, and resolving security vulnerabilities.",
+        "Experience with maintaining CI/CD pipelines, performing + monitoring multiple microservice deployments, and resolving security vulnerabilities.",
         "Active participant in agile ceremonies and PI planning.",
         "Collaborated with many stakeholders including architecture, QA, product, business, and leadership to ensure effective delivery.",
       ],
